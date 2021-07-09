@@ -148,9 +148,10 @@ async function notifyEvents() {
 }
 
 async function notifyEvent(ev: ScheduleEvent, url?: string, duration?: number) {
+  const title = ev.eventMenu ? `${ev.eventMenu}: ${ev.subject}` : ev.subject;
   notify(
     {
-      title: `${ev.eventMenu}: ${ev.subject}`,
+      title,
       message:
         (duration ? `${duration} ${__('minutes_before')}` : '') + ev.notes,
     },

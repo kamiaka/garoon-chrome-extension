@@ -232,6 +232,35 @@ p {
     margin: $space-lg 0;
     text-align: center;
   }
+
+  .save-button {
+
+    &-container {
+      position: relative;
+      > .saved {
+        color: $safe-color;
+        // display: inline-block;
+        position: absolute;
+        left: 100%;
+        top: 50%;
+        transform: translateY(-50%);
+        margin: 0 $space-md;
+        white-space: nowrap;
+
+        &.fade-out {
+          animation: fade-out-frames 1s linear 0.5s forwards;
+        }
+        @keyframes fade-out-frames {
+          0% {
+            opacity: 1;
+          }
+          100% {
+            opacity: 0;
+          }
+        }
+      }
+    }
+  }
 }
 
 .popup {

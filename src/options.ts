@@ -49,7 +49,7 @@ async function init() {
     .querySelector('#ext-options')!
     .addEventListener('submit', async ev => {
       ev.preventDefault();
-      store.save({
+      await store.save({
         baseURL: baseURL.value,
         refreshInMinutes:
           parseInt(refreshInMinutes.value, 10) ||
@@ -62,6 +62,13 @@ async function init() {
         notifiesRequireAuth: notifiesRequireAuth.checked,
         hooksURL: usesWebhook.checked ? hooksURL.value : '',
       });
+      const saved = document.querySelector<HTMLSpanElement>('.saved')!;
+      saved.hidden = false;
+      saved.classList.add('fade-out');
+      setTimeout(() => {
+        saved.classList.remove('fade-out');
+        saved.hidden = true;
+      }, 2000);
     });
 }
 

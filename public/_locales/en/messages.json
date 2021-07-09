@@ -88,5 +88,8 @@
   },
   "minutes_before": {
     "message": "min. before"
+  },
+  "saved": {
+    "message": "saved"
   }
 }
