@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>__MSG_ext_name__</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="popup.js"></script>
+  </head>
+  <body>
+    <div class="popup">
+      <header class="popup-header">
+        <a class="portal-opener" title="open portal"><h1 class="logo-container"><img src="icon/ga.png" class="logo" alt="Garoon Schedule" /></h1></a>
+        <div class="refresh-container">
+          <span class="last-updated">
+            <span class="last-updated-label">__MSG_last_updated__</span>
+            <span class="last-updated-time">--:--</span>
+          </span>
+          <button class="button refresh-button">__MSG_refresh__</button>
+        </div>
+      </header>
+      <main>
+        <div class="error-container">
+          <div class="error-title">__MSG_error_title__</div>
+          <p class="error-message">エラーが表示</p>
+        </div>
+        <div class="notification-container">
+          <ul class="notification-list">
+            <li>
+              <a>
+                <div class="notification-time">00:00:00</div>
+                <div class="notification-title">title</div>
+                <div class="notification-body">Body...</div>
+                <div class="notification-user">User Name</div>
+              </a>
+            </li>
+            <li><a>ここに通知を表示</a></li>
+          </ul>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

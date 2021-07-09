@@ -1,0 +1,31 @@
+{
+  "manifest_version": 2,
+  "name": "__MSG_ext_name__",
+  "version": "1.0.0",
+
+  "author": "Shinya Kamiaka",
+
+  "description": "__MSG_ext_description__",
+  "icons": {
+    "128": "icon/ga.png"
+  },
+  "browser_action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": true
+  },
+  "default_locale": "en",
+  "permissions": [
+    "alarms",
+    "notifications",
+    "storage",
+    "tabs",
+    "https://*/"
+  ],
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": true
+  }
+}

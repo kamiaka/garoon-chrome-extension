@@ -1,0 +1,92 @@
+{
+  "ext_name": {
+    "message": "Garoon Notificator"
+  },
+  "ext_description": {
+    "message": "Notify Cybozu Garoon schedule & unread notifications"
+  },
+  "options": {
+    "message": "Option"
+  },
+  "opt_base_options_label": {
+    "message": "Basic Preference"
+  },
+  "opt_base_url_title": {
+    "message": "Garoon Base URL"
+  },
+  "input_following_url_format": {
+    "message": "Input following URL format."
+  },
+  "opt_refresh_in_minutes_title": {
+    "message": "Input refresh minutes"
+  },
+  "minutes_unit":{
+    "message": "min."
+  },
+  "opt_notification_title": {
+    "message": "Notification preference"
+  },
+  "opt_notifies_notifications_label": {
+    "message": "Notifies unread notifications"
+  },
+  "opt_notifies_events_label": {
+    "message": "Notifies events"
+  },
+  "opt_notifies_require_auth_label": {
+    "message": "Notifies authentication required"
+  },
+  "opt_webhook": {
+    "message": "Web Hook"
+  },
+  "opt_uses_webhook_description": {
+    "message": "Post got schedule to input URL"
+  },
+  "opt_uses_webhook_label": {
+    "message": "Uses web hook"
+  },
+  "webhook_url": {
+    "message": "Web hook URL"
+  },
+  "see_api_document": {
+    "message": "Read Garoon REST API document."
+  },
+  "save_options": {
+    "message": "Sace"
+  },
+  "err_unauthenticated": {
+    "message": "Unauthorized"
+  },
+  "err_no_base_url": {
+    "message": "No base URL"
+  },
+  "refresh": {
+    "message": "Refresh"
+  },
+  "last_updated": {
+    "message": "Last Updated"
+  },
+  "schedule": {
+    "message": "schedule"
+  },
+  "space": {
+    "message": "space"
+  },
+  "workflow": {
+    "message": "workflow"
+  },
+  "bulletin": {
+    "message": "BBS"
+  },
+  "error_title": {
+    "message": "Error occurred"
+  },
+  "no_notification": {
+    "message": "No notification"
+  },
+  "failed_to_fetch": {
+    "message": "Failed to fetch"
+  },
+  "minutes_before": {
+    "message": "min. before"
+  }
+}

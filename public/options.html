@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Garoon Notificator Option</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="options.js"></script>
+</head>
+<body>
+  <div class="options-page">
+    <header class="opt-header">
+      <h1 class="opt-title">
+        <img class="opt-logo" src="icon/ga.png" role="presentation" alt="__MSG_ext_name__">
+        __MSG_options__
+      </h1>
+    </header>
+    <form id="ext-options">
+      <div class="card block">
+        <div class="card-header">
+          <div class="card-title">__MSG_opt_base_options_label__</div>
+        </div>
+        <div class="card-body">
+          <label for="base-url">__MSG_opt_base_url_title__</label>
+          <div class="input-group">
+            <input class="input" id="base-url" name="base-url">
+          </div>
+          <div class="note sub-block">
+            <p>__MSG_input_following_url_format__</p>
+            <ul>
+              <li>https://{sub-domain}.cybozu.com/</li>
+              <li>https://{server-address}/scripts/{install-id}/grn.exe</li>
+              <li>https://{server-address}/cgi-bin/{install-id}/grn.cgi</li>
+            </ul>
+          </div>
+          <label for="base-url">__MSG_opt_refresh_in_minutes_title__</label>
+          <div class="input-group refresh-in-minutes">
+            <input class="input" type="number" name="refresh-in-minutes" min="1" max="60">
+            <span class="input-group-text">__MSG_minutes_unit__</span>
+          </div>
+        </div>
+      </div>
+      <div class="card block">
+        <div class="card-header">
+          <div class="card-title">__MSG_opt_notification_title__</div>
+        </div>
+        <div class="card-body">
+          <div class="checkbox-container sub-block">
+            <label>
+              <input type="checkbox" name="notifies-notifications" class="checkbox">
+              __MSG_opt_notifies_notifications_label__
+
+            </label>
+          </div>
+          <div class="checkbox-container sub-block">
+            <label>
+              <input type="checkbox" name="notifies-events" class="checkbox">
+              __MSG_opt_notifies_events_label__
+            </label>
+            <div class="sub-block">
+              <div class="input-group notify-minutes-before">
+                <input class="input" type="number" name="notify-minutes-before" min="0" max="60">
+                <span class="input-group-text">__MSG_minutes_before__</span>
+              </div>
+            </div>
+          </div>
+          <div class="checkbox-container sub-block">
+            <label>
+              <input type="checkbox" class="checkbox" name="notifies-require-auth">
+              __MSG_opt_notifies_require_auth_label__
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="card block">
+        <div class="card-header">
+          <div class="card-title">__MSG_opt_webhook__</div>
+        </div>
+        <div class="card-body">
+          <div class="checkbox-container">
+            <label>
+              <input type="checkbox" class="checkbox" name="uses-webhook" />
+              __MSG_opt_uses_webhook_label__
+            </label>
+            <div class="sub-block">
+              <label for="base-url">__MSG_webhook_url__</label>
+              <div class="input-group">
+                <input class="input" name="webhook-url">
+              </div>
+            </div>
+            <div class="note">
+              <p>__MSG_opt_uses_webhook_description__</p>
+              <p><a href="https://developer.cybozu.io/hc/ja/articles/360000440583#step2" target="_blank" rel="noopener">__MSG_see_api_document__</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="footer block">
+        <button class="primary-button" type="submit">__MSG_save_options__</button>
+      </footer>
+    </form>
+  </div>
+</body>
+</html>

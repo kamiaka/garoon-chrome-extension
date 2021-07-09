@@ -1,0 +1,92 @@
+{
+  "ext_name": {
+    "message": "Garoon Notificator"
+  },
+  "ext_description": {
+    "message": "Cybozu Garoonのスケジュールと未読通知をデスクトップに通知します。"
+  },
+  "options": {
+    "message": "オプション"
+  },
+  "opt_base_options_label": {
+    "message": "基本設定"
+  },
+  "opt_base_url_title": {
+    "message": "ベースURL"
+  },
+  "input_following_url_format": {
+    "message": "以下のフォーマットのベースURLを入力してください"
+  },
+  "opt_refresh_in_minutes_title": {
+    "message": "データを取得する間隔を指定してください"
+  },
+  "minutes_unit":{
+    "message": "分ごと"
+  },
+  "opt_notification_title": {
+    "message": "通知設定"
+  },
+  "opt_notifies_notifications_label": {
+    "message": "未読のお知らせを通知する"
+  },
+  "opt_notifies_events_label": {
+    "message": "予定を通知する"
+  },
+  "opt_notifies_require_auth_label": {
+    "message": "認証失敗時に通知する"
+  },
+  "opt_webhook": {
+    "message": "ウェブフック"
+  },
+  "opt_uses_webhook_description": {
+    "message": "フェッチしたスケジュールを指定したURL宛にPOSTリクエストで送信します。"
+  },
+  "opt_uses_webhook_label": {
+    "message": "ウェブフックを利用する"
+  },
+  "webhook_url": {
+    "message": "ウェブフックURL"
+  },
+  "see_api_document": {
+    "message": "Garoon REST API ドキュメントをご確認ください。"
+  },
+  "save_options": {
+    "message": "設定を保存する"
+  },
+  "err_unauthenticated": {
+    "message": "認証されていません"
+  },
+  "err_no_base_url": {
+    "message": "ベースURLが設定されていません"
+  },
+  "refresh": {
+    "message": "更新"
+  },
+  "last_updated": {
+    "message": "最終更新"
+  },
+  "schedule": {
+    "message": "スケジュール"
+  },
+  "space": {
+    "message": "スペース"
+  },
+  "workflow": {
+    "message": "ワークフロー"
+  },
+  "bulletin": {
+    "message": "掲示板"
+  },
+  "error_title": {
+    "message": "エラーが発生しました"
+  },
+  "no_notification": {
+    "message": "通知がありません"
+  },
+  "failed_to_fetch": {
+    "message": "データを取得できませんでした"
+  },
+  "minutes_before": {
+    "message": "分前"
+  }
+}
