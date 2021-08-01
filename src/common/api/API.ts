@@ -15,6 +15,7 @@ export class GaroonAPI {
       headers: {
         'X-Requested-With': 'XMLHTTPRequest',
       },
+      redirect: 'error',
     });
 
     if (resp.status !== 200) {
