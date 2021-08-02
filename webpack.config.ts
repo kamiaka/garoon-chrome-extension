@@ -7,7 +7,9 @@ const devEnv = 'development';
 const env = process.env.NODE_ENV || devEnv;
 const isDev = env === devEnv;
 
-console.log('isDev', isDev);
+if (isDev) {
+  console.info('development mode');
+}
 
 const config: Configuration = {
   mode: 'production',
