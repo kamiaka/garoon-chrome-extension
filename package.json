@@ -3,7 +3,7 @@
   "private": true,
   "scripts": {
     "start": "webpack --watch",
-    "build": "NODE_ENV=production webpack",
+    "build": "NODE_ENV=production webpack && sh scripts/zip.sh",
     "build:dev": "webpack"
   },
   "devDependencies": {

@@ -6,8 +6,6 @@ export async function updateBadge() {
   const { error, notifications } = await store.load();
   const items = notifications || [];
 
-  console.log('count', items.length);
-
   chrome.browserAction.setIcon({
     path: error ? icons.GrayLogo : icons.Logo,
   });

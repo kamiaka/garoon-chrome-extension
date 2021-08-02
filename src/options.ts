@@ -10,7 +10,6 @@ function input(
   const elem = document.querySelector(
     `input[name=${name}]`,
   ) as HTMLInputElement;
-  console.log('input', name);
   if (typeof defaultValue === 'string') {
     elem.value = defaultValue;
   } else if (typeof defaultValue === 'boolean') {

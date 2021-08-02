@@ -168,11 +168,11 @@ async function notifyEvent(ev: ScheduleEvent, url?: string, duration?: number) {
 }
 
 function run() {
-  console.debug('init');
-
-  chrome.runtime.onInstalled.addListener(() => {
-    console.debug('onInstalled');
-    store.reset();
+  chrome.runtime.onInstalled.addListener(details => {
+    console.info(`installed reason: ${details.reason}`);
+    if (details.reason === 'install') {
+      store.reset();
+    }
   });
 
   initNotificationEvent();
