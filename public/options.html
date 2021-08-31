@@ -62,6 +62,12 @@
                 <span class="input-group-text">__MSG_minutes_before__</span>
               </div>
             </div>
+            <div class="sub-block">
+              <label for="ignore-event-keywords">__MSG_ignore_event_name_keywords__</label>
+              <div class="input-group">
+                <textarea class="input" name="ignore-event-keywords"></textarea>
+              </div>
+            </div>
           </div>
           <div class="checkbox-container sub-block">
             <label>
@@ -90,6 +96,16 @@
             <div class="note">
               <p>__MSG_opt_uses_webhook_description__</p>
               <p><a href="https://developer.cybozu.io/hc/ja/articles/360000440583#step2" target="_blank" rel="noopener">__MSG_see_api_document__</a></p>
+            </div>
+            <div class="sub-block">
+              <label for="webhook-headers">__MSG_webhook_headers__</label>
+              <div class="input-group">
+                <textarea class="input" name="webhook-headers"></textarea>
+              </div>
+              <div class="note">
+                <p>__MSG_opt_webhook_headers_description__</p>
+                <p>e.g., <code>authorization: Basic XXXXXXXX</code></p>
+              </div>
             </div>
           </div>
         </div>

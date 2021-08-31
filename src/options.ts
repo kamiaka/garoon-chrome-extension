@@ -18,6 +18,19 @@ function input(
   return elem;
 }
 
+function textarea(
+  name: string,
+  defaultValue?: string | undefined,
+): HTMLTextAreaElement {
+  const elem = document.querySelector(
+    `textarea[name=${name}]`,
+  ) as HTMLTextAreaElement;
+  if (typeof defaultValue === 'string') {
+    elem.value = defaultValue;
+  }
+  return elem;
+}
+
 async function init() {
   localizeHTML();
 
@@ -33,6 +46,10 @@ async function init() {
     v.notifiesNotifications || defaultConfig.notifiesNotifications,
   );
   const notifiesEvents = input('notifies-events', v.notifiesEvents);
+  const ignoreEventKeywords = textarea(
+    'ignore-event-keywords',
+    v.ignoreEventKeywords || defaultConfig.ignoreEventKeywords,
+  );
   const notifyMinutesBefore = input(
     'notify-minutes-before',
     `${v.notifyMinutesBefore || defaultConfig.notifyMinutesBefore}`,
@@ -43,6 +60,10 @@ async function init() {
   );
   const usesWebhook = input('uses-webhook', !!v.hooksURL);
   const hooksURL = input('webhook-url', v.hooksURL);
+  const hooksHeaders = textarea(
+    'webhook-headers',
+    v.hooksHeaders || v.hooksHeaders,
+  );
 
   document
     .querySelector('#ext-options')!
@@ -60,6 +81,8 @@ async function init() {
           defaultConfig.refreshInMinutes,
         notifiesRequireAuth: notifiesRequireAuth.checked,
         hooksURL: usesWebhook.checked ? hooksURL.value : '',
+        ignoreEventKeywords: ignoreEventKeywords.value,
+        hooksHeaders: hooksHeaders.value,
       });
       const saved = document.querySelector<HTMLSpanElement>('.saved')!;
       saved.hidden = false;
