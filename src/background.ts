@@ -183,7 +183,7 @@ async function notifyEvent(ev: ScheduleEvent, url?: string, duration?: number) {
     {
       title,
       message:
-        (duration ? `${duration} ${__('minutes_before')}` : '') + ev.notes,
+        (duration ? `${duration} ${__('minutes_before')}: ` : '') + ev.notes,
     },
     {
       onClicked: () => {
