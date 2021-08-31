@@ -47,6 +47,15 @@
   "webhook_url": {
     "message": "ウェブフックURL"
   },
+  "webhook_headers": {
+    "message": "カスタムヘッダ"
+  },
+  "opt_webhook_headers_description": {
+    "message": "ウェブフックをPOSTする際にカスタムヘッダを送信できます。(改行区切り)"
+  },
+  "ignore_event_name_keywords": {
+    "message": "無視するイベント名のキーワード (改行区切り)"
+  },
   "see_api_document": {
     "message": "Garoon REST API ドキュメントをご確認ください。"
   },

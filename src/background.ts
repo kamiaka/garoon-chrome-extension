@@ -108,43 +108,73 @@ async function updateScheduleEvents(baseURL: string) {
   });
   await store.save({ events: events });
 
-  const { hooksURL } = await store.load();
+  const { hooksURL, hooksHeaders } = await store.load();
   if (hooksURL) {
-    const resp = await callWebHook(hooksURL, JSON.stringify(data));
+    const resp = await callWebHook(
+      hooksURL,
+      JSON.stringify(data),
+      hooksHeaders,
+    );
     if (!resp.ok) {
       setError(__('err_web_hook_failed'));
     }
   }
 }
 
-async function callWebHook(url: string, data: string) {
+async function callWebHook(url: string, data: string, customHeaders?: string) {
+  const headers = customHeaders
+    ?.split('\n')
+    .map(v => v.trim())
+    .filter(Boolean)
+    .reduce<Record<string, string>>((records, line) => {
+      const v = line.match(/^([\w-]+):\s*(.+)$/);
+      return v ? { ...records, [v[1]]: v[2] } : records;
+    }, {});
+
   return await fetch(url, {
     method: 'POST',
     body: data,
+    headers,
   });
 }
 
 async function notifyEvents() {
-  const { events, notifiesEvents, notifyMinutesBefore } = await store.load();
+  const {
+    events,
+    notifiesEvents,
+    notifyMinutesBefore,
+    ignoreEventKeywords,
+  } = await store.load();
   if (!notifiesEvents) {
     return;
   }
 
   const duration = notifyMinutesBefore || 0;
+  const ignoreKeywords = ignoreEventKeywords
+    .split('\n')
+    .map(s => s.trim().toLowerCase())
+    .filter(Boolean);
 
   const curMin = Math.round(Date.now() / 60000);
   const { baseURL } = await store.load();
-  events?.forEach(ev => {
-    const startMin = Math.round(new Date(ev.start.dateTime).getTime() / 60000);
-    if (curMin + duration === startMin) {
-      notifyEvent(
-        ev,
-        baseURL &&
-          `${baseURL.replace(/\/+$/, '')}/schedule/view?event=${ev.id}`,
-        duration,
+  events
+    ?.filter(ev => {
+      const subject = ev.subject.toLowerCase();
+      return !ignoreKeywords.some(s => subject.includes(s));
+    })
+    .forEach(ev => {
+      const startMin = Math.floor(
+        new Date(ev.start.dateTime).getTime() / 60000,
       );
-    }
-  });
+      if (curMin + duration === startMin) {
+        notifyEvent(
+          ev,
+          baseURL &&
+            `${baseURL.replace(/\/+$/, '')}/schedule/view?event=${ev.id}`,
+          duration,
+        );
+      }
+    });
 }
 
 async function notifyEvent(ev: ScheduleEvent, url?: string, duration?: number) {

@@ -17,8 +17,10 @@ export interface Store {
 
   notifiesEvents?: boolean;
   notifyMinutesBefore?: number;
+  ignoreEventKeywords: string;
 
   hooksURL?: string;
+  hooksHeaders?: string;
 }
 
 export const defaultConfig: Store = {
@@ -26,9 +28,11 @@ export const defaultConfig: Store = {
   notifiesRequireAuth: true,
   notifiesNotifications: true,
   notifiesEvents: true,
+  ignoreEventKeywords: '',
   notifyMinutesBefore: 10,
   baseURL: '',
   hooksURL: '',
+  hooksHeaders: '',
 };
 
 const storageKey = 'grn.config';

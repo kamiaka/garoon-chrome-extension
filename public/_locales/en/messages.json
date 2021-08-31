@@ -47,6 +47,15 @@
   "webhook_url": {
     "message": "Web hook URL"
   },
+  "webhook_headers": {
+    "message": "Custom headers"
+  },
+  "opt_webhook_headers_description": {
+    "message": "Send headers on POST webhook (separate by line break)"
+  },
+  "ignore_event_name_keywords": {
+    "message": "Ignore event name keywords (separate by line break)"
+  },
   "see_api_document": {
     "message": "Read Garoon REST API document."
   },
