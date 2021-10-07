@@ -43,7 +43,7 @@ async function init() {
   );
   const notifiesNotifications = input(
     'notifies-notifications',
-    v.notifiesNotifications || defaultConfig.notifiesNotifications,
+    v.notifiesNotifications,
   );
   const notifiesEvents = input('notifies-events', v.notifiesEvents);
   const ignoreEventKeywords = textarea(
@@ -56,7 +56,7 @@ async function init() {
   );
   const notifiesRequireAuth = input(
     'notifies-require-auth',
-    v.notifiesRequireAuth || defaultConfig.notifiesRequireAuth,
+    v.notifiesRequireAuth,
   );
   const usesWebhook = input('uses-webhook', !!v.hooksURL);
   const hooksURL = input('webhook-url', v.hooksURL);

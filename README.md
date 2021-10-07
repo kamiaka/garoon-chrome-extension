@@ -12,6 +12,26 @@ Chrome extension for desktop notifications on Cybozu Garoon.
 
 - [Garoon Schedule Server](https://github.com/kamiaka/garoon-schedule-server)
 
+## Development
+
+### Build
+
+```
+npm run build
+```
+
+### Start (Watch and build)
+
+```
+npm start
+```
+
+### Deployment
+
+1. Update manifest version.
+2. Build package.
+3. Upload package.
+
 ## License
 
 [MIT](./LICENSE)
