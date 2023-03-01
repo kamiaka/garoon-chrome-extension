@@ -21,6 +21,7 @@ function init() {
 
 function initDOM() {
   localizeHTML();
+  settingButton().addEventListener('click', openSettings);
   refreshButton().addEventListener('click', refresh);
   portalOpener().addEventListener('click', openPortal);
 }
@@ -34,6 +35,7 @@ function render() {
 const elem = <T extends HTMLElement>(selector: string): T =>
   document.querySelector<T>(selector)!;
 
+const settingButton = () => elem<HTMLButtonElement>('.setting-button');
 const refreshContainer = () => elem<HTMLDivElement>('.refresh-container');
 const refreshButton = () => elem<HTMLButtonElement>('.refresh-button');
 const refreshTime = () => elem<HTMLSpanElement>('.last-updated-time');
@@ -62,6 +64,12 @@ async function openPortal() {
   const { baseURL } = await store.load();
   chrome.tabs.create({
     url: baseURL,
+  });
+}
+
+async function openSettings() {
+  chrome.tabs.create({
+    url: './options.html',
   });
 }
 

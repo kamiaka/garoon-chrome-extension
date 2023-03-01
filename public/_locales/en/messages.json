@@ -5,6 +5,9 @@
   "ext_description": {
     "message": "Notify Cybozu Garoon schedule & unread notifications"
   },
+  "setting": {
+    "message": "Setting"
+  },
   "options": {
     "message": "Option"
   },
@@ -20,7 +23,7 @@
   "opt_refresh_in_minutes_title": {
     "message": "Input refresh minutes"
   },
-  "minutes_unit":{
+  "minutes_unit": {
     "message": "min."
   },
   "opt_notification_title": {
