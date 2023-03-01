@@ -5,6 +5,9 @@
   "ext_description": {
     "message": "Cybozu Garoonのスケジュールと未読通知をデスクトップに通知します。"
   },
+  "setting": {
+    "message": "設定"
+  },
   "options": {
     "message": "オプション"
   },
@@ -20,7 +23,7 @@
   "opt_refresh_in_minutes_title": {
     "message": "データを取得する間隔を指定してください"
   },
-  "minutes_unit":{
+  "minutes_unit": {
     "message": "分ごと"
   },
   "opt_notification_title": {
