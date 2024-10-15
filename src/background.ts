@@ -207,11 +207,6 @@ function run() {
 
   initNotificationEvent();
 
-  window.addEventListener('unhandledrejection', ev => {
-    ev.preventDefault();
-    handleError(ev.reason);
-  });
-
   chrome.alarms.onAlarm.addListener(async alarm => {
     try {
       await notifyEvents();
@@ -220,10 +215,6 @@ function run() {
       const minutes = Math.round((Date.now() - (lastUpdate || 0)) / 60000);
 
       if (refreshInMinutes <= minutes) {
-        if (!navigator.onLine) {
-          console.info('navigator offline', new Date().toString());
-          return;
-        }
         const { notifications } = await store.load();
         await update();
         await notifyNotifications(notifications);
