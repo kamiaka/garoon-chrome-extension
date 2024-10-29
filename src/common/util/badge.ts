@@ -6,7 +6,7 @@ export async function updateBadge() {
   const { error, notifications } = await store.load();
   const items = notifications || [];
 
-  chrome.browserAction.setIcon({
+  chrome.action.setIcon({
     path: error ? icons.GrayLogo : icons.Logo,
   });
 
@@ -14,20 +14,20 @@ export async function updateBadge() {
     const d = new Date();
     console.info(error, `${dateString(d)} ${timeString(d)}`);
 
-    chrome.browserAction.setBadgeText({
+    chrome.action.setBadgeText({
       text: '!',
     });
-    chrome.browserAction.setBadgeBackgroundColor({
+    chrome.action.setBadgeBackgroundColor({
       color: '#e20240',
     });
     return;
   }
 
-  chrome.browserAction.setBadgeText({
+  chrome.action.setBadgeText({
     text:
       items.length > 0 ? (items.length > 99 ? '99+' : `${items.length}`) : '',
   });
-  chrome.browserAction.setBadgeBackgroundColor({
+  chrome.action.setBadgeBackgroundColor({
     color: '#4a7ad2',
   });
 }

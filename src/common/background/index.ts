@@ -103,6 +103,8 @@ export async function sendMessage<T>(type: Type, ...args: any[]): Promise<T> {
           reject(new Error('no response'));
         } else if (res.error) {
           reject(res.error);
+        } else if (res.data === undefined) {
+          reject(res.error);
         } else {
           resolve(res.data);
         }
